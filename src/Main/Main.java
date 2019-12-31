@@ -1,16 +1,20 @@
 package Main;
 
+import Controller.ExitCommand;
+import Controller.NextCommand;
+import Controller.PrevCommand;
 import Model.Persistence.File.FileImageLoader;
 import Model.Persistence.ImageLoader;
-import View.ConsoleImageDisplay;
 import View.ImageDisplay;
+import View.MainFrame;
+import View.SwingImageDisplay;
 import java.io.File;
 
 public class Main {
     
     public static void main(String args[]){
         
-        ImageLoader imageLoader = new FileImageLoader(new File("fotos"));
+        /*
         ImageDisplay consoleImageDisplay = new ConsoleImageDisplay();
         consoleImageDisplay.display(imageLoader.load());
         consoleImageDisplay.display(consoleImageDisplay.current().getNext());
@@ -18,7 +22,15 @@ public class Main {
         consoleImageDisplay.display(consoleImageDisplay.current().getNext());
         consoleImageDisplay.display(consoleImageDisplay.current().getNext());
         consoleImageDisplay.display(consoleImageDisplay.current().getNext());
-        
-        //FALTA IMPLEMNTACIÓN DE SWINGIMAGEDISPLAY
+        */
+        ImageLoader imageLoader = new FileImageLoader(new File("fotos"));
+        ImageDisplay swingImageDisplay = new SwingImageDisplay();
+        swingImageDisplay.display(imageLoader.load());
+        MainFrame mainFrame = new MainFrame();
+        mainFrame.addSwingImageDisplay((SwingImageDisplay)swingImageDisplay);
+        mainFrame.addCommand("Next", new NextCommand(swingImageDisplay));
+        mainFrame.addCommand("Prev", new PrevCommand(swingImageDisplay));
+        mainFrame.addCommand("Exit", new ExitCommand());
+        mainFrame.execute();
     }
 }
