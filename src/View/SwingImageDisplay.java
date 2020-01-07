@@ -28,7 +28,7 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay{
     public void paint(Graphics g) {
         g.clearRect(0, 0, this.getWidth(), this.getHeight());
         try {
-            g.drawImage(awtImage(), 250, 0, this);
+            g.drawImage(awtImage(), 0, 0, this.getWidth(), this.getHeight(),null);
         } catch (IOException ex) {
             Logger.getLogger(SwingImageDisplay.class.getName()).log(Level.SEVERE, null, ex);
         }

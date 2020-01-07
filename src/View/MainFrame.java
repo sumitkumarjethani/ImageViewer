@@ -29,8 +29,9 @@ public class MainFrame extends JFrame{
     }
 
     private void initLabels() {
-        labels.put("Next", ">");
-        labels.put("Prev", "<");
+        labels.put("Next", "<");
+        labels.put("Prev", ">");
+        labels.put("Cut", "Cut");
         labels.put("Exit", "Exit");
     }
 
@@ -39,6 +40,7 @@ public class MainFrame extends JFrame{
         panel.setLayout(new FlowLayout());
         panel.add(button("Next"));
         panel.add(button("Prev"));
+        panel.add(button("Cut"));
         panel.add(button("Exit"));
         return panel;
     }
@@ -63,7 +65,7 @@ public class MainFrame extends JFrame{
     }
     
     public void addSwingImageDisplay(SwingImageDisplay swingImageDisplay){
-        this.add(swingImageDisplay);
+        this.add(swingImageDisplay,BorderLayout.CENTER);
     }
     
 }

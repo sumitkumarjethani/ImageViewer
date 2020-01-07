@@ -26,7 +26,7 @@ public class FileImageLoader implements ImageLoader {
         return new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                return pathname.getName().endsWith(".jpg");
+                return (pathname.getName().endsWith(".png") || pathname.getName().endsWith(".jpg"));
             }
         };
     }
