@@ -1,6 +1,6 @@
-package Model.Persistence;
+package persistence;
 
-import Model.Image;
+import model.Image;
 
 public interface ImageLoader {
     public Image load();

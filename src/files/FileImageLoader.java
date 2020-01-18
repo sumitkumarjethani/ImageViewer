@@ -1,7 +1,7 @@
-package Model.Persistence.File;
+package files;
 
-import Model.Image;
-import Model.Persistence.ImageLoader;
+import model.Image;
+import persistence.ImageLoader;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -11,11 +11,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class FileImageLoader implements ImageLoader {
-    private File[] files;
+    private final File[] files;
     
     public FileImageLoader(File root){
         files = root.listFiles(imageType());
     }
+    
     
     @Override
     public Image load() {
