@@ -1,5 +1,6 @@
-package view;
+package swing;
 
+import swing.SwingImageDisplay;
 import controller.Command;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

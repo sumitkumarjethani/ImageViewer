@@ -8,8 +8,8 @@ import files.FileImageLoader;
 import persistence.ImageLoader;
 import presenter.ImagePresenter;
 import view.ImageDisplay;
-import view.MainFrame;
-import view.SwingImageDisplay;
+import swing.MainFrame;
+import swing.SwingImageDisplay;
 import java.io.File;
 
 public class Main {
