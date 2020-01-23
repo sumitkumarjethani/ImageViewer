@@ -1,11 +1,11 @@
-package presenter;
+package architecture.presenter;
 
-import model.Image;
-import view.ImageDisplay;
+import architecture.model.Image;
+import architecture.view.ImageDisplay;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import view.ImageDisplay.Listener;
+import architecture.view.ImageDisplay.Listener;
 
 public class ImagePresenter{
 

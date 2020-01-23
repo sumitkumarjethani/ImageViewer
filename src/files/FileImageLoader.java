@@ -1,7 +1,7 @@
 package files;
 
-import model.Image;
-import persistence.ImageLoader;
+import architecture.model.Image;
+import architecture.view.persistence.ImageLoader;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;

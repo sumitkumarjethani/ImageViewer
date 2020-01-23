@@ -1,6 +1,6 @@
-package controller;
+package architecture.controller;
 
-import presenter.ImagePresenter;
+import architecture.presenter.ImagePresenter;
 
 public class PrevCommand implements Command{
     

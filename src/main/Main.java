@@ -1,14 +1,13 @@
 package main;
 
-import controller.ExitCommand;
-import controller.NextCommand;
-import controller.PrevCommand;
-import model.Image;
+import architecture.controller.ExitCommand;
+import architecture.controller.NextCommand;
+import architecture.controller.PrevCommand;
+import architecture.model.Image;
 import files.FileImageLoader;
-import persistence.ImageLoader;
-import presenter.ImagePresenter;
-import view.ImageDisplay;
-import swing.MainFrame;
+import architecture.view.persistence.ImageLoader;
+import architecture.presenter.ImagePresenter;
+import architecture.view.ImageDisplay;
 import swing.SwingImageDisplay;
 import java.io.File;
 
@@ -19,11 +18,11 @@ public class Main {
         ImageLoader imageLoader = new FileImageLoader(new File("fotos"));
         Image image = imageLoader.load();
         //View
-        ImageDisplay swingImageDisplay = new SwingImageDisplay();
+        ImageDisplay imageDisplay = new SwingImageDisplay();
         MainFrame mainFrame = new MainFrame();
-        mainFrame.addSwingImageDisplay((SwingImageDisplay)swingImageDisplay);
+        mainFrame.addSwingImageDisplay((SwingImageDisplay)imageDisplay);
         //Presenter
-        ImagePresenter imagePresenter = new ImagePresenter(image,swingImageDisplay);
+        ImagePresenter imagePresenter = new ImagePresenter(image,imageDisplay);
         //Controller
         mainFrame.addCommand("Prev", new PrevCommand(imagePresenter));
         mainFrame.addCommand("Next", new NextCommand(imagePresenter));

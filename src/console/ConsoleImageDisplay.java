@@ -2,7 +2,7 @@ package console;
 
 import java.util.ArrayList;
 import java.util.List;
-import view.ImageDisplay;
+import architecture.view.ImageDisplay;
 
 public class ConsoleImageDisplay implements ImageDisplay {
 
